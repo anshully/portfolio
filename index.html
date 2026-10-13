@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anshul Verma — B.Tech CSE | Developer & AI Tech Enthusiast</title>
+    <meta name="description" content="Academic and personal engineering portfolio of Anshul Verma, B.Tech CSE student at JECRC University, Jaipur. Exploring programming in C & Python, software development, AI concepts, and modern web environments." />
+    <meta name="keywords" content="Anshul Verma, JECRC University, B.Tech CSE, Jaipur, Software Developer, AI Enthusiast, C Programming, Python, Three.js, Portfolio" />
+    <meta name="author" content="Anshul Verma" />
+
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Anshul Verma — B.Tech CSE Portfolio" />
+    <meta property="og:description" content="Personal portfolio of Anshul Verma — B.Tech CSE student at JECRC University, Jaipur. Programming, AI workflows, and digital experiences." />
+    <meta property="og:url" content="https://github.com/anshully" />
+
+    <!-- Fonts: Space Grotesk (Headings), Plus Jakarta Sans (Body), JetBrains Mono (Technical) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Favicon (Architectural Monolith SVG) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230c0d10'/%3E%3Cpolygon points='16,4 28,11 28,21 16,28 4,21 4,11' fill='%231e2129' stroke='%23ff5500' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23ff5500'/%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <!-- Site Navigation -->
+    <header class="site-nav" id="main-nav">
+      <div class="nav-container">
+        <a href="#hero" class="nav-brand" aria-label="Anshul Verma Home">
+          <div class="brand-symbol">AV</div>
+          <div class="brand-text-group">
+            <span class="brand-name">Anshul Verma</span>
+            <span class="brand-meta">B.Tech CSE // JECRC</span>
+          </div>
+        </a>
+
+        <ul class="nav-links" id="nav-links-menu">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#achievements" class="nav-link">Learning</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-status-badge">
+          <span class="pulse-dot"></span>
+          <span>JECRC University · Jaipur</span>
+        </div>
+
+        <button class="mobile-menu-toggle" id="menu-toggle-btn" aria-label="Toggle navigation menu">
+          MENU
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section id="hero" class="hero-section">
+        <div class="hero-grid">
+          <!-- Left Column: Typography, Introduction & Actions -->
+          <div class="hero-content">
+            <div class="hero-meta-badge">
+              <span class="badge-highlight">ARCHITECTURAL PORTFOLIO</span>
+              <span>// 2026 ACADEMIC DOSSIER</span>
+            </div>
+
+            <h1 class="hero-name">Anshul Verma</h1>
+            <p class="hero-role">B.Tech CSE Student | Developer & AI Tech Enthusiast</p>
+
+            <p class="hero-intro">
+              “I’m a computer science student at JECRC University, interested in programming, software development, artificial intelligence and building practical digital experiences.”
+            </p>
+
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">
+                Explore My Work
+              </a>
+              <a href="#about" class="btn btn-secondary">
+                About Me
+              </a>
+              <a href="#contact" class="btn btn-outline">
+                Contact Me
+              </a>
+            </div>
+
+            <div class="hero-footprint">
+              <div class="footprint-item">
+                <span class="footprint-label">INSTITUTION</span>
+                <span class="footprint-val">JECRC University</span>
+              </div>
+              <div class="footprint-item">
+                <span class="footprint-label">LOCATION</span>
+                <span class="footprint-val">Jaipur, Rajasthan, India</span>
+              </div>
+              <div class="footprint-item">
+                <span class="footprint-label">COORDINATES</span>
+                <span class="footprint-val">26.9124° N, 75.7873° E</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive 3D Architectural Scene -->
+          <div class="hero-canvas-wrapper" id="hero-canvas-container">
+            <div id="hero-3d-container"></div>
+            
+            <div class="canvas-ui-overlay">
+              <div class="canvas-top-bar">
+                <span class="canvas-spec-tag">
+                  THREE.JS // WEBGL ARCHITECTURAL PAVILION
+                </span>
+                <div class="canvas-controls-group">
+                  <button type="button" class="canvas-ctrl-btn" id="btn-toggle-lighting" title="Toggle Daylight or Dusk Lighting">
+                    Lighting: Studio
+                  </button>
+                  <button type="button" class="canvas-ctrl-btn" id="btn-reset-view" title="Reset Camera Viewpoint">
+                    Reset View
+                  </button>
+                </div>
+              </div>
+
+              <div class="canvas-bottom-bar">
+                <div class="canvas-inspector-readout" id="canvas-readout">
+                  <span class="readout-title" id="readout-title">Interactive Architectural Pavilion</span>
+                  <span class="readout-desc" id="readout-desc">Hover structural components to inspect materials and load-bearing geometries.</span>
+                </div>
+                <span class="canvas-hint">DRAG TO ROTATE · HOVER TO INSPECT</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Me Section -->
+      <section id="about" class="section about-section">
+        <div class="section-tag-row">
+          <span class="section-code">[02 // PROFILE]</span>
+          <div class="section-divider-line"></div>
+        </div>
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">
+          Undergraduate perspective, engineering discipline, and technical philosophy.
+        </p>
+
+        <div class="about-grid">
+          <div class="about-text-column">
+            <p class="lead-text">
+              Approaching computer science through structured problem solving, architectural precision, and continuous experimentation.
+            </p>
+            <p>
+              I am currently pursuing my B.Tech in Computer Science and Engineering (CSE Core) at JECRC University in Jaipur, Rajasthan. My path in technology centers on understanding fundamental computing principles from the ground up—from procedural memory dynamics in C to high-level application architectures.
+            </p>
+            <p>
+              I spend my time writing code, studying algorithms, and exploring how modern artificial intelligence and LLM-driven workflows can be leveraged to build meaningful, accessible tools. Rather than just relying on generic templates or surface-level abstractions, I focus on understanding how systems work under the hood and writing disciplined, clean code.
+            </p>
+            <p>
+              Outside lecture halls and programming labs, I build practical digital utilities like expense trackers and study planners, experiment with web graphics and interactive visual design, and refine my engineering habits through version-controlled personal projects and technical documentation.
+            </p>
+          </div>
+
+          <div class="about-pillars-column">
+            <div class="pillar-card">
+              <div class="pillar-header">
+                <div class="pillar-icon-box">01</div>
+                <h3 class="pillar-title">CS Fundamentals & Systems</h3>
+              </div>
+              <p class="pillar-desc">
+                Deep interest in computer science fundamentals, memory layout, computational logic, data representation, and structured programming in C.
+              </p>
+            </div>
+
+            <div class="pillar-card">
+              <div class="pillar-header">
+                <div class="pillar-icon-box">02</div>
+                <h3 class="pillar-title">Python & Problem Solving</h3>
+              </div>
+              <p class="pillar-desc">
+                Writing algorithmic solutions, data manipulation scripts, and utility tools for personal and academic workflow automation.
+              </p>
+            </div>
+
+            <div class="pillar-card">
+              <div class="pillar-header">
+                <div class="pillar-icon-box">03</div>
+                <h3 class="pillar-title">AI & Generative Workflows</h3>
+              </div>
+              <p class="pillar-desc">
+                Studying core AI concepts, generative AI paradigms, prompt engineering, and modern LLM workflows to augment developer efficiency.
+              </p>
+            </div>
+
+            <div class="pillar-card">
+              <div class="pillar-header">
+                <div class="pillar-icon-box">04</div>
+                <h3 class="pillar-title">Modern Web & Graphics</h3>
+              </div>
+              <p class="pillar-desc">
+                Crafting semantic, accessible web experiences paired with spatial 3D WebGL environments using Three.js and modern client-side standards.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section id="education" class="section education-section">
+        <div class="section-tag-row">
+          <span class="section-code">[03 // ACADEMIC FOUNDATION]</span>
+          <div class="section-divider-line"></div>
+        </div>
+        <h2 class="section-title">Education</h2>
+        <p class="section-subtitle">
+          Formal academic training in Computer Science & Engineering.
+        </p>
+
+        <div class="education-panel">
+          <div class="edu-main-grid">
+            <div class="edu-core-info">
+              <div class="edu-timeline-pill">
+                <span>AUGUST 2026 – PRESENT</span>
+              </div>
+              <h3 class="edu-degree-title">B.Tech in Computer Science and Engineering</h3>
+              <p class="edu-institution-name">JECRC University, Jaipur</p>
+              <p class="edu-location-line">
+                <span>📍 Jaipur, Rajasthan, India</span>
+              </p>
+              <div class="edu-status-row">
+                <span>Specialization: CSE Core</span>
+                <span>•</span>
+                <span>Status: Enrolled Undergraduate</span>
+              </div>
+            </div>
+
+            <div class="edu-highlights-col">
+              <h4>ACADEMIC HIGHLIGHTS & FOCUS AREAS</h4>
+              <ul class="edu-bullet-list">
+                <li class="edu-bullet-item">
+                  <span class="edu-bullet-mark">▸</span>
+                  <span>Rigorous foundational coursework covering Computer Science and Engineering fundamentals, structured logic, and algorithmic thinking.</span>
+                </li>
+                <li class="edu-bullet-item">
+                  <span class="edu-bullet-mark">▸</span>
+                  <span>Hands-on laboratory programming sessions emphasizing structured procedural implementation and memory models in C.</span>
+                </li>
+                <li class="edu-bullet-item">
+                  <span class="edu-bullet-mark">▸</span>
+                  <span>Exploration of mathematical foundations of computing, digital discrete structures, and modular software engineering principles.</span>
+                </li>
+                <li class="edu-bullet-item">
+                  <span class="edu-bullet-mark">▸</span>
+                  <span>Active collaboration using Git and GitHub for academic repositories, documentation hygiene, and peer code reviews.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="edu-spec-footer">
+            <div class="edu-spec-item">
+              <span class="spec-k">CAMPUS LOCATION</span>
+              <span class="spec-v">Sitapura Industrial Area Ext., Jaipur</span>
+            </div>
+            <div class="edu-spec-item">
+              <span class="spec-k">DEGREE PROGRAM</span>
+              <span class="spec-v">Bachelor of Technology (B.Tech)</span>
+            </div>
+            <div class="edu-spec-item">
+              <span class="spec-k">DEPARTMENT</span>
+              <span class="spec-v">Computer Science & Engineering</span>
+            </div>
+            <div class="edu-spec-item">
+              <span class="spec-k">ACADEMIC TRACK</span>
+              <span class="spec-v">Core Computing & Systems</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technical Skills Section -->
+      <section id="skills" class="section skills-section">
+        <div class="section-tag-row">
+          <span class="section-code">[04 // CAPABILITIES]</span>
+          <div class="section-divider-line"></div>
+        </div>
+        <h2 class="section-title">Technical Skills</h2>
+        <p class="section-subtitle">
+          Core competencies, languages, and technical disciplines currently cultivated and practiced.
+        </p>
+
+        <div class="skills-grid" id="skills-grid-mount">
+          <!-- Populated dynamically via portfolioData.js -->
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="section projects-section">
+        <div class="section-tag-row">
+          <span class="section-code">[05 // SELECTED WORKS]</span>
+          <div class="section-divider-line"></div>
+        </div>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-subtitle">
+          Functional student software, interactive 3D experiments, and working client-side simulators.
+        </p>
+
+        <div class="projects-container">
+          <!-- Project 1: Personal Portfolio Website -->
+          <article class="project-card">
+            <div class="project-header-row">
+              <div class="proj-title-group">
+                <div class="proj-badge-row">
+                  <span class="proj-status-badge">Completed & Live</span>
+                  <span class="tech-tag">Architectural 3D Environment</span>
+                </div>
+                <h3 class="proj-title">Personal Portfolio Website</h3>
+              </div>
+              <div class="proj-tech-tags">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript (ES6+)</span>
+                <span class="tech-tag">Three.js</span>
+                <span class="tech-tag">Vite</span>
+              </div>
+            </div>
+
+            <p class="proj-summary">
+              An interactive personal portfolio presenting my background, skills, technical interests and projects.
+            </p>
+            <p class="proj-description">
+              Built with an original architectural brutalist visual identity inspired by contemporary spatial art installations. Incorporates a realistic Three.js 3D pavilion with procedural concrete textures, soft shadows, brushed steel, and restrained electric-orange lighting. Fully responsive and engineered for academic evaluation.
+            </p>
+
+            <div class="proj-features-list">
+              <div class="feature-bullet">Procedural 3D architectural pavilion with interactive mouse parallax and lighting toggle</div>
+              <div class="feature-bullet">Desktop two-column composition tuned for 1366×768 and 1440×900 display viewports</div>
+              <div class="feature-bullet">Zero heavy UI framework dependencies; clean vanilla JavaScript architecture</div>
+              <div class="feature-bullet">Semantic HTML5, keyboard navigation, and reduced-motion accessibility support</div>
+            </div>
+
+            <div class="sim-footer-note">
+              <span>Status: Active & Deployed · Currently viewing live site</span>
+              <span class="text-right">Repository: <a href="https://github.com/anshully" target="_blank" rel="noopener noreferrer" style="color:var(--accent-orange); text-decoration: underline;">github.com/anshully</a></span>
+            </div>
+          </article>
+
+          <!-- Project 2: Student Expense Tracker with LIVE Simulator -->
+          <article class="project-card">
+            <div class="project-header-row">
+              <div class="proj-title-group">
+                <div class="proj-badge-row">
+                  <span class="proj-status-badge">Functional Project · In Progress</span>
+                  <span class="tech-tag">Interactive Simulator Ready</span>
+                </div>
+                <h3 class="proj-title">Student Expense Tracker</h3>
+              </div>
+              <div class="proj-tech-tags">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">LocalStorage API</span>
+              </div>
+            </div>
+
+            <p class="proj-summary">
+              A practical budgeting tool for students to record expenses, categorise spending and calculate totals.
+            </p>
+            <p class="proj-description">
+              Engineered to help university students monitor daily spending across academic supplies, hostel food, campus transit, and utilities. Features instant transaction entry, multi-category filtering, real-time summation, single-click deletion, and client-side persistence.
+            </p>
+
+            <!-- Working Simulator Mount -->
+            <div class="simulator-mount" id="expense-tracker-mount">
+              <!-- Rendered by expenseTracker.js -->
+            </div>
+          </article>
+
+          <!-- Project 3: Smart Study Planner with LIVE Simulator -->
+          <article class="project-card">
+            <div class="project-header-row">
+              <div class="proj-title-group">
+                <div class="proj-badge-row">
+                  <span class="proj-status-badge">Functional Project · In Progress</span>
+                  <span class="tech-tag">Interactive Simulator Ready</span>
+                </div>
+                <h3 class="proj-title">Smart Study Planner</h3>
+              </div>
+              <div class="proj-tech-tags">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">LocalStorage API</span>
+              </div>
+            </div>
+
+            <p class="proj-summary">
+              A student productivity tool for organising subjects, tasks, deadlines and study progress.
+            </p>
+            <p class="proj-description">
+              Designed to structure B.Tech engineering coursework, laboratory deadlines, and study milestones. Supports subject-specific categorization, priority tagging, interactive completion status toggles, progress bar calculation, and automatic browser storage.
+            </p>
+
+            <!-- Working Simulator Mount -->
+            <div class="simulator-mount" id="study-planner-mount">
+              <!-- Rendered by studyPlanner.js -->
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Certifications & Achievements Section -->
+      <section id="achievements" class="section achievements-section">
+        <div class="section-tag-row">
+          <span class="section-code">[06 // PATHWAY]</span>
+          <div class="section-divider-line"></div>
+        </div>
+        <h2 class="section-title">Currently Learning & Building</h2>
+        <p class="section-subtitle">
+          Transparent technical progression, active coursework explorations, and upcoming engineering milestones.
+        </p>
+
+        <div class="pathway-grid" id="pathway-grid-mount">
+          <!-- Populated dynamically via portfolioData.js -->
+        </div>
+      </section>
+
+      <!-- Future Botpress Integration Channel & Contact Section -->
+      <section id="contact" class="section contact-section">
+        <div class="section-tag-row">
+          <span class="section-code">[07 // COMMUNICATION]</span>
+          <div class="section-divider-line"></div>
+        </div>
+        <h2 class="section-title">Contact & Integration</h2>
+        <p class="section-subtitle">
+          Direct communication channels, geographical coordinates, and conversational agent architecture.
+        </p>
+
+        <!-- Botpress Integration Point -->
+        <div class="botpress-section-wrap" id="botpress-mount">
+          <!-- Rendered by botpressHook.js -->
+        </div>
+
+        <!-- Contact Cards Grid -->
+        <div class="contact-grid">
+          <div class="contact-card-main">
+            <h3 class="contact-header-text">Let’s Connect</h3>
+            <p class="contact-invitation">
+              Whether you are an academic reviewer, fellow student, or engineer interested in collaborating on programming projects, software utilities, or AI exploration, I welcome genuine conversations.
+            </p>
+
+            <div class="contact-channels-list">
+              <!-- Email -->
+              <div class="contact-channel-item">
+                <div class="channel-info">
+                  <span class="channel-type">PRIMARY EMAIL</span>
+                  <a href="mailto:anshul.292007@gmail.com" class="channel-value">anshul.292007@gmail.com</a>
+                </div>
+                <div style="display:flex; gap:8px;">
+                  <a href="mailto:anshul.292007@gmail.com" class="btn-channel-action">Send Mail</a>
+                  <button type="button" class="btn-channel-action" id="btn-copy-email" title="Copy email address">Copy</button>
+                </div>
+              </div>
+
+              <!-- LinkedIn -->
+              <div class="contact-channel-item">
+                <div class="channel-info">
+                  <span class="channel-type">PROFESSIONAL NETWORK</span>
+                  <a href="https://www.linkedin.com/in/anshully/" target="_blank" rel="noopener noreferrer" class="channel-value">linkedin.com/in/anshully</a>
+                </div>
+                <a href="https://www.linkedin.com/in/anshully/" target="_blank" rel="noopener noreferrer" class="btn-channel-action">
+                  View Profile ↗
+                </a>
+              </div>
+
+              <!-- GitHub -->
+              <div class="contact-channel-item">
+                <div class="channel-info">
+                  <span class="channel-type">CODE REPOSITORIES</span>
+                  <a href="https://github.com/anshully" target="_blank" rel="noopener noreferrer" class="channel-value">github.com/anshully</a>
+                </div>
+                <a href="https://github.com/anshully" target="_blank" rel="noopener noreferrer" class="btn-channel-action">
+                  Visit GitHub ↗
+                </a>
+              </div>
+            </div>
+
+            <p class="contact-honesty-note">
+              Direct communication verified. Working mailto and official social links ensure reliable outreach.
+            </p>
+          </div>
+
+          <!-- Secondary Location & Academic Coordinates Panel -->
+          <div class="contact-meta-panel">
+            <div>
+              <span class="meta-block-title">ACADEMIC BASE</span>
+              <p class="meta-block-text">
+                Enrolled in full-time undergraduate engineering studies at JECRC University, Jaipur. Available for collaborative student initiatives, open-source contributions, and technical peer discussions.
+              </p>
+
+              <div class="location-card">
+                <div class="loc-row">
+                  <span class="loc-k">LOCATION</span>
+                  <span class="loc-v">Jaipur, Rajasthan, India</span>
+                </div>
+                <div class="loc-row">
+                  <span class="loc-k">TIMEZONE</span>
+                  <span class="loc-v">Indian Standard Time (IST, UTC+05:30)</span>
+                </div>
+                <div class="loc-row">
+                  <span class="loc-k">CAMPUS</span>
+                  <span class="loc-v">JECRC University Campus</span>
+                </div>
+                <div class="loc-row">
+                  <span class="loc-k">STATUS</span>
+                  <span class="loc-v" style="color:var(--accent-orange);">Enrolled B.Tech CSE (Core)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-honesty-note">
+              This portfolio presents verified information for Anshul Verma. No artificial contact backends or inflated qualifications are included.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-left">
+          <span class="footer-name">Anshul Verma</span>
+          <span class="footer-sub">B.Tech CSE Student | JECRC University, Jaipur, Rajasthan, India</span>
+        </div>
+
+        <ul class="footer-links">
+          <li><a href="https://github.com/anshully" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/anshully/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a></li>
+          <li><a href="mailto:anshul.292007@gmail.com" class="footer-link">Email</a></li>
+        </ul>
+
+        <div class="footer-right">
+          <button type="button" class="back-to-top-btn" id="btn-back-to-top">
+            ↑ Back to Top
+          </button>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Main Entry Module -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
